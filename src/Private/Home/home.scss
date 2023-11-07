@@ -1,0 +1,57 @@
+@use "../../Settings/scss/functions.scss";
+.main{
+    border: 1px solid black;
+}
+.main__section{
+    transition: 0.5s ease all;
+    min-height:100vh;
+    margin-top: 1rem;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.main__section .home__slider{
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: stretch;
+    z-index: -1;
+    min-width: 1410px;
+    min-height: 100vh;
+}
+.main__section .home__slider img{
+    height: 100%;
+    border-radius: 20px;    
+    width: 1410px;
+    object-fit: contain;
+    transition: 0.5s ease all;
+}
+.site_header{
+    position: sticky;
+    z-index: 1;
+    width: 100%;
+}
+.main__section .main__btn{
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    padding:4rem 2rem;
+    background: #fd0;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+.main__section .main__prev{
+    left: 0;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    background-image: url("../../Settings/assets/images/leftArrow.png");
+    background-position: calc(50%);
+}
+.main__section .main__next{
+    right: 0;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    background-image: url("../../Settings/assets/images/rightArrow.png");
+    background-position: calc(20%);
+}

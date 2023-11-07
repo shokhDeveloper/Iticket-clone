@@ -1,0 +1,32 @@
+{
+  "users": [],
+  "posts": [],
+  "slider-images": [
+    [
+      {
+        "img": "https://cdn.iticket.uz/event/slide/7WypILfaX7A66ioTRZVEMIBSWJsOkcUxKwwhVmlJ.jpg",
+        "url": "https://iticket.uz"
+      },
+      {
+        "img": "https://cdn.iticket.uz/event/slide/fqmUx4kKZRXrl3NJJxl1uG0dPEdjmUjnuxzmLeVc.jpg",
+        "url": "https://iticket.uz"
+      },
+      {
+        "img": "https://cdn.iticket.uz/event/slide/visa_local_discount.jpg",
+        "url": "https://iticket.uz"
+      },
+      {
+        "img": "https://cdn.iticket.uz/event/slide/Kxl9JjEp3NnprGc01ovl2JJyKqtXUcYkaOm4F6PU.jpg",
+        "url": "https://iticket.uz"
+      },
+      {
+        "img": "https://cdn.iticket.uz/event/slide/uOevafVDweLPhZ1hH4k1C4qbqVFQTmurOtJdQJrd.jpg",
+        "url": "https://iticket.uz"
+      },
+      {
+        "img": "https://cdn.iticket.uz/event/slide/s6pzIqFyuq6f5CQoYkMoANaALuJw2bGBAsGxUmLx.jpg",
+        "url": "https://iticket.uz"
+      }
+    ]
+  ]
+}

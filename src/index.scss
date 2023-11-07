@@ -1,0 +1,61 @@
+@font-face {
+  font-display: swap; 
+  font-family: "Akatab-regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./Settings/assets/fonts/akatab-v7-latin_latin-ext_tifinagh-regular.woff2") format("woff2"); 
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: "Akatab-medium";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./Settings/assets/fonts/akatab-v7-latin_latin-ext_tifinagh-600.woff2") format("woff2"); 
+}
+@font-face {
+  font-display: swap; 
+  font-family: "Akatab-bold";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./Settings/assets/fonts/akatab-v7-latin_latin-ext_tifinagh-900.woff2") format("woff2"); 
+}
+body{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.main {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0 ;
+  z-index: -1 !important; 
+}
+.main--animation::before{
+  content: " ";
+  width: 100%;
+  display: block;
+  position: absolute;
+  height: 100%;
+  background-size: 480px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image:  linear-gradient(to bottom right,#fd0 40%,#fd0 50%, #fd0 30%, #fd0,) ;
+  transform: skewX(-60deg)  ;
+  z-index: -1;
+  animation-name: animationMainBar;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function:ease;
+}
+.main h1{
+  margin: 0;
+  padding: 0;
+}
+@keyframes  animationMainBar {
+    from{
+      transform: skewX(-50deg);
+    }
+    to{
+      transform: skewX(-60deg);
+    }
+}
