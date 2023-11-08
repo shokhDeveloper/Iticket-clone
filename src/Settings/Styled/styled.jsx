@@ -28,3 +28,14 @@ export const GlobalStyle = createGlobalStyle`
     background: rgba(0,0,0,0.4);
    }
 `;
+ 
+export const SlideBtn = styled.button.attrs({
+    type: "button"
+})`
+    padding: 0.8rem 1rem;
+    background: #fd0;
+    color:#000;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 10px;
+`

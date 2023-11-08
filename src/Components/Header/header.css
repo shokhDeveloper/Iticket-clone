@@ -1,0 +1,145 @@
+.site_header {
+  padding-top: 1rem;
+}
+
+.site_header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site_header__inner .site__logo {
+  margin-left: 1rem;
+}
+
+.site_nav .site_nav__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.site_nav .site_nav__list .site_nav__item {
+  margin: 0 1rem;
+  position: relative;
+}
+
+.site_nav__list .site_nav__item:not(:last-child)::after {
+  content: " ";
+  display: inline-block;
+  width: 100%;
+  height: 4px;
+  background: #fd0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(10px) rotateZ(-10deg);
+  opacity: 0;
+}
+
+.site_nav__list .site_nav__item:nth-child(4)::after {
+  width: 40%;
+  left: 20%;
+  bottom: -0.5rem;
+}
+
+.site_nav__list .site_nav__item:not(:last-child):hover::after {
+  opacity: 1;
+}
+
+.site_nav__item .site_nav__link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 900;
+}
+
+.site_header__settings a, .site_header__settings .site_header__search {
+  text-decoration: none;
+  color: #fff;
+  background-size: 26px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1rem;
+  margin: 0rem 1rem;
+}
+
+.site_header__settings .site_header__like {
+  filter: invert(1);
+  background-image: url("../../Settings/assets/images/Not_Like.png");
+}
+
+.site_header__settings .site_header__search {
+  padding: 1rem;
+  background: transparent;
+  background-image: url("https://static-00.iconduck.com/assets.00/search-icon-2044x2048-psdrpqwp.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.site_header__settings .site_header__shopping {
+  background-image: url("../../Settings/assets/images/ShoppingCart.png");
+  filter: invert(1);
+  position: relative;
+}
+
+.site_header__settings .site_header__shopping .shopping__count {
+  position: absolute;
+  top: 0;
+  right: -0.5rem;
+  color: black;
+}
+
+.site_header__profile {
+  padding: 0.8rem 1.5rem !important;
+  border-radius: 50%;
+  background: #fd0;
+  background-image: url("https://www.freeiconspng.com/thumbs/person-icon/person-icon-5.png");
+  background-position: center;
+  background-size: 20px !important;
+}
+
+.site_header__language button {
+  font-size: 12px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.site_header__language button:nth-child(1) {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.site_header__language button:nth-child(2) {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.site_nav__item {
+  position: relative;
+}
+
+.site_nav__bar {
+  list-style: none;
+  position: absolute;
+  right: -1rem;
+  margin: 0;
+  padding: 0;
+  margin-top: 1.7rem;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.site_nav__bar .site_nav_bar__item {
+  padding: 0.5rem 1rem;
+}
+
+.site_nav_bar__item .site_nav_bar__link {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}/*# sourceMappingURL=header.css.map */

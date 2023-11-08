@@ -1,0 +1,59 @@
+[
+    {
+        "images": {
+            "imageBackground": "https://cdn.iticket.uz/event/poster_bg/KZAGKcjJuOdxAXczloAHketDeBQZfQAi84cdr3Zg.jpg",
+            "imageUser": "https://cdn.iticket.uz/event/poster/7BFB8QGX5370FSQBxpzk3rMuG1barvKsHpEw18Cf.png"
+        },
+        "name": " Тамара Гвердцители",
+        "date": "23 ноября 2023",
+        "price": "300 000 UZS",
+        "vanue": "Дворец Международных Форумов"
+    },
+    {
+        "img": "https://cdn.iticket.uz/event/poster_bg/ZpOSFUiDvd8YNcnfIARXrUElxngjo6PfSiU7vT8r.jpg",
+        "name": "TARKAN",
+        "price": "255 000 UZS",
+        "date": "11 ноября 2023",
+        "vanue": "Хумо Арена"
+    },
+    {   
+        "images":{
+        "imageBackground": "https://cdn.iticket.uz/event/poster_bg/0pmzBaEt31rx7xIUO7TfWMKqZt4RkEK5Ke4ocD7B.jpg",
+        "imageUser": "https://cdn.iticket.uz/event/poster/Y38C3gk45HuPOOfdN7mdBiKCgA34njb8EafhAdiU.png"  
+    },
+        "name": "Камызяки",
+        "price": "50 000 UZS",
+        "date": "23 ноября 2023",
+        "vanue": "Дворец «Дружбы народов»"
+    },
+    {
+        "images": {
+            "imageBackground": "https://cdn.iticket.uz/event/poster_bg/LuBT6s7N5Vifcfuc6QhAAJW2CMTU8KwMFDfJQl2c.jpg",
+            "imageUser": "https://cdn.iticket.uz/event/poster/uVT3rAiT3CjiVvc9iFiAOddhiqZXu4FhmECnbq5y.png"
+        },
+        "price": "100 000 UZS",
+        "name": "Markaziy osiyo WBC kamari uchun",
+        "date": "17 ноября 2023",
+        "vanue": "Хумо Арена"
+    },
+    {
+        "price": "120 000 UZS",
+        "name": "Новогодний концерт ЗАЖИГАЙ",
+        "images": {
+            "imageBackground": "https://cdn.iticket.uz/event/poster_bg/DO3h2EWaO3kHKmP5quCCRjEuxbBrqanGIClAkqJu.jpg",
+            "imageUser": "https://cdn.iticket.uz/event/poster/ohTz01uQPFVKDSel5MaPMB1bSXQpWLYtvlJMWsyn.png"
+        },
+        "date": "17 ноября 2023",
+        "vanue": "Хумо Арена"
+    },
+    {
+        "images": {
+            "imageBackground": "https://cdn.iticket.uz/event/poster_bg/qaJdoOxCgkJasDNGCIPBgNIKspSbKAVPz1yK1Qhi.jpg",
+            "imageUser": "https://cdn.iticket.uz/event/poster/9R7lcvVw2tzx8fmX0EKRLxvOtDm7Zg6gEzbaGwW0.png"
+        },
+        "name": "Jah Khalib",
+        "price": "130 000 UZS",
+        "date": "25 ноября 2023",
+        "vanue": "Хумо Арена"
+    }
+]
