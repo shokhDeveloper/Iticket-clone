@@ -1,0 +1,52 @@
+[
+  {
+    "images": {
+      "imageBackground": "https://cdn.iticket.uz/event/poster_bg/fK6zOCOKh11NEQT67BogVH1khE6bGNqaMRb7RbdJ.jpg",
+      "imageUser": "https://cdn.iticket.uz/event/poster/ziWbaTxuwsLs0np8B6bfYxIhHsnHJmwqnHeg4k0F.png"
+    },
+    "name": "МОНО-СПЕКТАКЛЬ «ЗАГАДКА КОКО ШАНЕЛЬ»",
+    "date": "21 января 2024",
+    "vanue": "Дворец культуры железнодорожников",
+    "price": "300 000 UZS"
+  },
+  {
+    "images":{
+        "imageBackground": "https://cdn.iticket.uz/event/poster_bg/zM66ujK6BYhc0rrFZO5aCEDaMjiwMHyEk1lynoe7.jpg",
+        "imageUser": "https://cdn.iticket.uz/event/poster/pBdmbyEgrEttXp7nGD6mrZC2dKZm9qXDaricS0at.png"
+    },
+    "name": "Концерт народного артиста Узбекистана Р.УСМАНОВА и оркестра «БРАВО»",
+    "date": "16 ноябр 2023",
+    "vanue": "A. Navoiy nomidagi DAKT",
+    "price": "55 000 UZS"
+  },
+  {
+    "images": {
+        "imageUser": "https://cdn.iticket.uz/event/poster/LoeV7zaqsEsk1DK4qi1c4JqmZQgkSTmROKvw4Vyw.png",
+        "imageBackground": "https://cdn.iticket.uz/event/poster_bg/3P6Hnc7SlOSTO5aMAQKmBXbtNr0lsXEqGYHRPK6g.jpg"
+    },
+    "price": "150 000 UZS",
+    "name": "Мир Турецких Сериалов 2.0",
+    "date": "14 ноябр 2023",
+    "vanue": "Turkiston saroyi"
+  },
+  {
+    "images": {
+        "imageBackground": "https://cdn.iticket.uz/event/poster_bg/6QyX3n8G7jK2OIdEVFlhvqBWzDccTqZGkxPDD9jk.jpg",
+        "imageUser": "https://cdn.iticket.uz/event/poster/K8vbaDzh2kQQ5jBqtjoHsQJzpqBa6WqiB61pm5yi.png"
+    },
+    "price": "300 000 UZS",
+    "date": "16 ноябр 2023",
+    "name": "ЛЕКЦИЯ «ВОСТОК И МОДА»",
+    "vanue": "Temir yo'lchilar madaniyat saroyi"
+  },
+  {
+    "images": {
+        "imageBackground": "https://cdn.iticket.uz/event/poster_bg/lWquUMPABJAB1w2sQu0fPcOugaUsZOLhBHcz6bwg.jpg",
+        "imageUser": "https://cdn.iticket.uz/event/poster/yLACTR2qulTbgVqZoQbPLgrWSnDY5PERegIyNIwr.png"
+    },
+    "name": "МАСТЕР-КЛАСС «ОРИЕНТАЛЬНЫЙ ИНТЕРЬЕР»",
+    "date": "14 ноябр 2023",
+    "price": "300 000 UZS",
+    "vanue": "Turkiston saroyi"
+  }
+]

@@ -61,6 +61,9 @@ body{
       transform: skewX(-60deg);
     }
 }
+.carousel{
+  margin: 3rem 0rem;
+}
 .slider{
   padding: 2rem 0rem !important;
 }
@@ -165,4 +168,51 @@ body{
 }
 .slide:hover .slide__btn{
   transform: translateY(-35px);
+}
+.carousel__title_box{
+  margin-top: 2rem;
+}
+.carousel__title_box .popular__title{
+  font-size: 30px;
+}
+.carousel__title_box *{
+  margin: 0;
+  padding: 0;
+}
+.carousel--active{
+  padding: 1rem;
+  background: linear-gradient(to bottom right,#fd0 0,#fd0 50%,transparent 0,transparent);
+}
+.main__shopping_btn{
+  position: fixed;
+  bottom: 1.4rem;
+  right: 1.5rem;
+  z-index: 222 !important;
+  background: #fd0;
+  padding: 0.8rem;
+  font-size: 20px;
+  border-radius: 50%;
+  animation-name: shoppingBtnAnimation;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  outline: 15px solid rgba(255, 221, 0, 0.345);
+}
+.main__shopping_btn .shopping__count{
+  position: absolute;
+  top: 0;
+  right: -0.5rem;
+  background: red;
+  padding: 0.1rem 0.3rem;
+  transform: translateY(-10px);
+  color: #fff;
+  border-radius: 50%;
+}
+@keyframes shoppingBtnAnimation{
+  from{
+    outline: 15px solid rgba(255, 221, 0, 0.345) ;
+  } 
+  to{
+    outline: 15px solid #ffffff29;
+  }
 }

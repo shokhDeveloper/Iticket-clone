@@ -1,14 +1,15 @@
+import PopularJson from "../../Components/JSONS/popular.json";
+import KultutJson from "../../Components/JSONS/kultur.json";
 import { useEffect, useState } from "react";
 import "./home.scss";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  setBarDisplay,
   setMainAnimation,
   setSliderCountDec,
   setSliderCountInc,
 } from "../../Settings";
 import { HomeSlider } from "./HomeSlider";
-import { Header, Popular, SearchBox } from "../../Components";
+import { Article, Carousel, Footer, Header,SearchBox, ShoppingBtn } from "../../Components";
 export const Home = () => {
   const { loader, mainAnimation, sliderCount } = useSelector(
     ({ Reducer }) => Reducer
@@ -57,7 +58,17 @@ export const Home = () => {
           </div>
         </div>
       </section>
-      <Popular />
+      {mainSectionDisplay && (
+        <>
+        <Carousel array={PopularJson} title={"Популярные Мероприятия"} />
+        <Carousel array={KultutJson} title={"Культурные Мероприятия"}/>
+        <Carousel array={PopularJson} title={"Выходные"} active={true}/>
+        <Carousel array={KultutJson} title={"Детям"} active={true}/>
+        <Article/>
+        <Footer/>
+        </>
+      )}  
+      <ShoppingBtn/>
     </>
   );
 };

@@ -1,0 +1,69 @@
+@use "../../Settings/scss/functions.scss";
+.main__footer{
+    margin-top: 3rem;
+}
+.main_footer__inner{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template: repeat(1, auto) / repeat(4, 1fr);
+    justify-content: space-between;
+    padding: 1rem 0rem;
+}
+.main_footer__inner .main_footer__item{
+    padding: 1rem 0rem;
+}
+.main_footer__item .main_footer__list{
+    list-style:  none;
+    margin: 0 ;
+    padding: 0;
+}
+.main_footer__list li {
+    padding: 0.5rem 0rem;
+}
+.main_footer__item .main_footer_item__info{
+    margin-top: 1rem;
+}
+.main_footer__item .main_footer_item__info h3{
+    margin: 0;
+    padding: 0;
+    color: #828283;
+    font-weight: 400;
+}
+.main_footer__item .main_footer_item__info a{
+    display: block;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 900;
+}
+.main_footer__list li h3{
+    font-size: 25px;
+}
+.main_footer__list li a{
+    text-decoration: none;
+    color: #828283 ;
+    font-size: 20px;
+}
+.main_footer__item .main_footer__links img{
+    width: 280px;
+    height: auto;
+    object-fit: contain;
+}
+.main_footer__settings{
+    width: 90% ;
+    margin: 0 auto;
+    @include functions.flex(space-between);
+}
+.main_footer__settings .main_footer__contacts{
+    background: #fd0;
+    padding: 0.5rem;
+}
+.main_footer__settings a {
+    font-size:30px;
+    padding: 0rem 1rem;
+}
+.main_footer__settings a svg{
+    width: 1em;
+    height: 1em;
+}

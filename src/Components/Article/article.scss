@@ -1,0 +1,85 @@
+@use "../../Settings/scss/functions.scss";
+.main_article__box{
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+    background: #fd0;
+    min-height: 400px;
+    overflow: hidden;
+    margin: 1rem auto;
+    border-radius: 20px;
+}
+.main_article__box .main_article__animation{
+    position: absolute;
+    background: black;
+    padding: 0.5rem 0rem;
+    color: #fff;
+    width: 100%;
+    top: 0;
+    transform-origin: top right;
+    transform: translateY(-20px) rotateZ(-28deg) ;
+    text-align: center;
+    z-index: 0;
+}
+.main_article__box .main_article__animation h1{
+    transform: translateY(-10px) scale(5.2);
+    animation-name: textAnimation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    text-transform: uppercase;
+    z-index: 0;
+}
+@keyframes textAnimation{
+    from{
+        transform: translateY(-10px) translateX(-48%) scale(5.2);    
+    }
+    to{
+        transform: translateY(-10px) translateX(65%) scale(5.2);    
+    }
+}
+.main_article__inner{
+    display: grid;
+    grid-template: repeat(1, auto) / 55% 35%;
+    align-items: flex-start;
+}
+.main_article__inner *{
+    z-index: 1;
+}
+.main_article__inner .main_article__image_box{
+    text-align: center; 
+    height: 100%;
+}
+.main_article__image_box img{
+   height: 100%; 
+}
+.main_article__inner .main_article__info{
+    padding: 3rem 2rem;
+    text-align: start;
+}
+.main_article__info h2{
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+.main_article__info p{
+    font-size: 18px;
+}
+.main_article__group_btn{
+    display: flex;
+    align-items: center;;
+    background: black;
+    border-radius: 10px;
+    max-width: 220px;
+    justify-content: space-between;
+}
+.main_article__group_btn a{
+    flex-basis: 50%;
+    padding: 0.5rem;
+}
+.main_article__group_btn a img{
+    width: 100%;
+    object-fit: cover;
+}
+
