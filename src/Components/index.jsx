@@ -5,3 +5,6 @@ export * from "./Carousel";
 export * from "./Article";
 export * from "./Footer";
 export * from "./ShoppingBtn";
+export * from "./Modal";
+export * from "./Login";
+export * from "./Register";

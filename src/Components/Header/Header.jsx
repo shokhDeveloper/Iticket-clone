@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./header.scss";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useCart } from "react-use-cart";
-import { setBarDisplay } from "../../Settings";
+import { setBarDisplay, setModalSign } from "../../Settings";
 export const Header = () => {
-  const {barDisplay} = useSelector(({Reducer}) => Reducer)
+  const {barDisplay, user, token} = useSelector(({Reducer}) => Reducer)
   const dispatch = useDispatch()
   const {items} = useCart()
   return (
@@ -107,7 +107,16 @@ export const Header = () => {
             <NavLink className={"site_header__link site_header__shopping"} to={"/"}>
                 <span className="shopping__count"> {items.length} </span>
             </NavLink>
-            <NavLink className={"site_header__link site_header__profile"} to={"/profile-settings"}/>
+            <NavLink to={token ? "/profile-settings": ""} style={{backgroundImage:  token ? "":  "url(https://www.freeiconspng.com/thumbs/person-icon/person-icon-5.png)" }} onClick={() => {
+              if(token){
+                return false
+              }else{
+                dispatch(setModalSign(true))
+              }
+            }} className={"site_header__link site_header__profile"} >
+              
+              {token &&  user.name.charAt(0)}.{ token && user.lastname.charAt(0)}
+            </NavLink>
         </div>
       </div>
     </header>

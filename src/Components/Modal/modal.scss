@@ -1,0 +1,67 @@
+.modal__links button {
+  color: #fff !important;
+  font-size: 20px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 50%;
+}
+.modal_links__wk {
+  background: #4d75a2;
+}
+.modal_links__faceBook {
+  background: #3b5a97;
+}
+.modal_links__google {
+  background: #db4d41;
+}
+.modal__links button svg {
+  font-size: 1em !important;
+  width: 1em !important;
+  height: 1em !important;
+}
+
+.modal__form input{
+    display: block;
+    width: 100%;
+    padding:  1rem;
+}
+@for $i from 1 through 10 {
+    @if $i % 2 == 0 {
+        .modal__form input:nth-child(#{$i}){
+            margin: 20px 0px;
+        }
+    }
+}
+
+.modal__form input::placeholder{
+    font-size: 20px;
+}
+.modal_form__discription_box{
+    width: 100%;
+    text-align: center;
+    padding-top: 2rem;
+}
+.modal_form__discription_box *{
+    margin: 0;
+}
+.modal_form__discription_box h3{
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(114, 113, 113);
+}
+.modal_form__discription_box a{
+    font-size: 20px;
+    text-decoration: none;
+}
+.modal_close__btn{
+    background: transparent;
+    font-size: 25px;
+    color: #fff;
+}
+form p{
+    margin: 0;
+    padding: 0;
+}
+form input{
+    margin: 0;
+}

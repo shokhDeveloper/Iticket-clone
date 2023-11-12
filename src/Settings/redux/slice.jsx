@@ -10,7 +10,8 @@ const initialState = {
   sliderCount: 0,
   barDisplay: false,
   searchBox: false,
-  users: []
+  users: [],
+  modalSign: false
 };
 export const slice = createSlice({
   name: "ITICKET",
@@ -57,6 +58,9 @@ export const slice = createSlice({
     },
     setUserServer(state, action){
       state.users = action.payload
+    },
+    setModalSign(state, action){
+      state.modalSign = action.payload
     }
   },
 });
@@ -70,6 +74,7 @@ export const {
   setSliderCountDec,
   setBarDisplay,
   setSearchBox,
-  setUserServer
+  setUserServer,
+  setModalSign
 } = slice.actions;
 export const Reducer = slice.reducer;

@@ -1,5 +1,26 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "shohijahonmusinkulov@gmail.com",
+      "password": "$2a$10$xlIosGVYKUCuG8ELwHRTMOMZbtfk4vISpkiPDPr7ljk2BV4/8qJy6",
+      "name": "Shohijahon",
+      "lastname": "Musinkulov",
+      "phone": "998991457766",
+      "nextPassword": "82850406m",
+      "date": "12.11.2023, 14:51:18 Register-At its user",
+      "id": 1
+    },
+    {
+      "email": "leomessi@gmail.com",
+      "password": "$2a$10$D7qMFkZMh3i1BSzm44h1u.G40KxRfnLP8S0zVHVHayB6dsl59wlqC",
+      "name": "Lionel",
+      "lastname": "Messi",
+      "phone": "821 780 34 66",
+      "nextPassword": "leomessi",
+      "date": "12.11.2023, 15:03:18 Register-At its user",
+      "id": 2
+    }
+  ],
   "posts": [],
   "slider-images": [
     [
