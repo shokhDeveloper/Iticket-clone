@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import { Button, Input, setModalLoginClassName, setModalSign, setToken, setUser, useLoader } from "../../Settings";
-import { useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { Button, Context, Input, setModalLoginClassName, setModalSign, setToken, setUser, useLoader } from "../../Settings";
+import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup"
@@ -9,6 +9,7 @@ import { useMutation } from "react-query";
 import axios from "axios";
 export const Login = () => {
   const date = new Date()
+  const {setSignType} = useContext(Context)
   const {openLoader} = useLoader()
   const dispatch = useDispatch() 
   const validationSchema = yup.object({
@@ -69,7 +70,10 @@ export const Login = () => {
       </form>
       <div className="modal_form__discription_box">
         <h3>Впервые на iTicket.UZ?</h3>
-        <Link to={"/register"}>Зарегистрироваться сейчас</Link>
+        <a href="#" onClick={() => {
+          console.log("ishladi")
+          setSignType("register")
+        }}>Зарегистрироваться сейчас</a>
       </div>
     </div>
   );

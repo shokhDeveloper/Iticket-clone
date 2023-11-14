@@ -18,7 +18,7 @@ export const Home = () => {
   const { loader, mainAnimation, modalSign, authenticationType } = useSelector(
     ({ Reducer }) => Reducer
   );
-  const {setFirebaseModal, firebaseModal} = useContext(Context)
+  const {setFirebaseModal, firebaseModal, signType} = useContext(Context)
   const [mainSectionDisplay, setMainSectionDisplay] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -74,11 +74,11 @@ export const Home = () => {
         <Footer/>
         {modalSign && (
           <Modal modal={modalSign} setModal={setModalSign} links={{google: true, faceBook: true, wk: true}} title={"Войти"} context={false} >
-            <Routes>
-            <Route path="/" element={<Login modal={modalSign} setModal={setModalSign} />} />
-            <Route path="/login" element={<Login modal={modalSign} setModal={setModalSign} />} />
-            <Route path="/register" element={<Register modal={modalSign} setModal={setModalSign} />} />
-          </Routes>
+            {signType === "login" || signType === null? (
+              <Login modal={modalSign} setModal={setModalSign} />
+            ): signType === "register" ? (
+              <Register modal={modalSign} setModal={setModalSign} />
+            ): null}
           </Modal>
        )}
        {firebaseModal && (

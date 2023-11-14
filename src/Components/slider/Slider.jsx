@@ -5,14 +5,17 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { SlideBtn } from '../../Settings';
-import { useState } from "react";
+import { Context, SlideBtn, useLoader } from '../../Settings';
+import { useContext, useState } from "react";
 import { useCart } from "react-use-cart";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 export const Slider = (props) => {
     const {token} = useSelector(({Reducer}) => Reducer)
+    const {setMainActive} = useContext(Context)
     const [swiper, setSwiper] = useState(null)
+    const {openLoader} = useLoader()
+    const dispatch = useDispatch();
     const navigate = useNavigate()
     const {addItem} = useCart()
     const handleShop = (tovar) => {
@@ -51,7 +54,11 @@ export const Slider = (props) => {
         <button onClick={handleClick} className='main__prev border-transparent swiper-button-prev' id="prev"></button>
         {props.json.map(item => {
             return(
-                <SwiperSlide className='slide' onClick={() => navigate(`/tovar/${item.name}`) } >
+                <SwiperSlide className='slide' onClick={() => {
+                    openLoader()
+                    navigate(`/tovar/${item.id}`)
+                    setMainActive(true)
+                    }} >
                     <div className="slide__body">
                     {(function(slide){
                         if(slide.images){

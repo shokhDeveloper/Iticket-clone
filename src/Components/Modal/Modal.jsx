@@ -9,12 +9,9 @@ import { useContext, useEffect } from "react";
 
 export const Modal = ({ title, setModal, links, children, context, modal }) => {
   const {modalLoginClassName, googleFirebaseUser, authenticationType} = useSelector(({Reducer}) => Reducer)
-  const { pathname } = useLocation();
+  const {signType} = useContext(Context)
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const path = pathname.substring(1, pathname.length).length
-    ? pathname.substring(1, pathname.length)
-    : "login";
+  const path = signType  
     const handleGoogle = () => { 
       signInWithPopup(auth, googleAuthProvider).then(response => {
         console.log(response)
@@ -103,7 +100,6 @@ export const Modal = ({ title, setModal, links, children, context, modal }) => {
               }else{
                 dispatch(setModal(false));
               }
-              navigate("/");
             }}
           >
             <AiOutlineClose />

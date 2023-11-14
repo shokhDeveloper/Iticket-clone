@@ -10,7 +10,7 @@
     border-radius: 20px;
     overflow: hidden;
 }
-.main__section .home__slider{
+.home__slider{
     position: absolute;
     top: 0;
     display: flex;
@@ -19,12 +19,17 @@
     min-width: 1410px;
     min-height: 100vh;
 }
-.main__section .home__slider img{
+.home__slider img{
+    width: 1410px;
     height: 100%;
     border-radius: 20px;    
-    width: 1410px;
     object-fit: contain;
     transition: 0.5s ease all;
+}
+
+.tovar_page__image_box img{
+    width: 100%;
+    height: 100% !important;
 }
 .site_header{
     position: sticky;

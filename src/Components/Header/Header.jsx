@@ -111,7 +111,7 @@ export const Header = () => {
             <NavLink className={"site_header__link site_header__shopping"} to={token ? "/shopping": ""}>
                 <span className="shopping__count"> {token ? items.length: 0} </span>
             </NavLink>
-            <NavLink to={token ? "/profile-settings": ""} style={{backgroundImage:  token ? "":  "url(https://www.freeiconspng.com/thumbs/person-icon/person-icon-5.png)" }} onClick={() => {
+            <NavLink   style={{backgroundImage:  token ? "":  "url(https://www.freeiconspng.com/thumbs/person-icon/person-icon-5.png)" }} onClick={() => {
               if(token){
                 return false
               }else{

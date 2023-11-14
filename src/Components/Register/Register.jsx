@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { Button, FormikField, Input, setToken, setUser, useBack, useLoader } from "../../Settings";
+import { useContext, useEffect } from "react";
+import { Button, Context, FormikField, Input, setToken, setUser, useBack, useLoader } from "../../Settings";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { Form, Formik } from "formik";
@@ -7,17 +7,12 @@ import { useMutation } from "react-query";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 export const Register = ({modal, setModal}) => {
-    const { back, typeBack } = useBack(true);
+    const {setSignType} = useContext(Context)
     const {openLoader} = useLoader()
     const dispatch = useDispatch()
     const date = new Date()
 
-  useEffect(() => {
-    if (typeBack) {
-      back();
-    }
-  }, [typeBack, back]);
-  const initialValues = {
+const initialValues = {
     name: "",
     lastname: "",
     phone: "",
@@ -56,7 +51,6 @@ export const Register = ({modal, setModal}) => {
      mutate({...event, date: `${date.toLocaleString()} Register-At its user` })
     }
   };
-
   return (
     <div className="modal_form__box">
       <Formik
@@ -126,7 +120,7 @@ export const Register = ({modal, setModal}) => {
       </Formik>
       <div className="modal_form__discription_box">
         <h3>Уже зарегистрирован?</h3>
-        <Link to={"/login"}>Войдите здесь</Link>
+        <a href="#" onClick={() => setSignType("login")} >Войдите здесь</a>
       </div>
     </div>
   );

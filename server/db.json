@@ -1,5 +1,6 @@
 {
   "users": [
+  
   ],
   "posts": [],
   "slider-images": [
@@ -85,13 +86,13 @@
         "img": "https://cdn.iticket.uz/event/cover/3CRLNLfFAuWeYr1tuiBpv09KvHANTTSEQal5BWEY.jpg",
         "url": "https://iticket.uz",
         "KEY": "ЛЕКЦИЯ",
-        "id": 9
+        "id": 10
       },
       {
         "img": "https://cdn.iticket.uz/event/cover/MXkqTcGs4mwTRJjjk7BrKDJMhjmsZS0ea18h62bk.jpg",
         "url": "https://iticket.uz",
         "KEY": "Турецких",
-        "id": 10
+        "id": 9
       }
   ]
 }

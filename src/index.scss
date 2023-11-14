@@ -276,8 +276,6 @@ body{
 }
  .modal_register{
   height: 97vh;
-  border: 1px solid red;
-
 }
 .modal__overlay .modal_register::before{
   content: " ";
@@ -296,4 +294,4 @@ body{
 }
 .modal__header h3{
   font-size: 30px;
-}
+} 

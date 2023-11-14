@@ -1,10 +1,21 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { getItem, removeItem, setItem } from "../Utils";
 
 export const Context = createContext()
 export const ContextProvider = ({children}) => {
     const [firebaseModal, setFirebaseModal] = useState(false)
+    const pageActiveStorage = getItem("page-active") ? true : false
+    const [mainActive, setMainActive] = useState(pageActiveStorage )
+    const [signType, setSignType] = useState("login")
+    useEffect(() => {
+        if(mainActive){
+            setItem("page-active", "true")
+        }else {
+            removeItem("page-active")
+        }
+    },[mainActive])   
     return(
-        <Context.Provider value={{firebaseModal, setFirebaseModal}}>
+        <Context.Provider value={{firebaseModal, setFirebaseModal, mainActive, setMainActive, signType, setSignType}}>
             {children}
         </Context.Provider>
     )

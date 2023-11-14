@@ -20,7 +20,8 @@ const initialState = {
   modalSign: false,
   modalLoginClassName: false,
   googleFirebaseUser: defaultUser,
-  authenticationType: null
+  authenticationType: null,
+  dataPage: null
 };
 export const slice = createSlice({
   name: "ITICKET",
@@ -79,6 +80,9 @@ export const slice = createSlice({
     },
     setAuthenticationType(state, action){
       state.authenticationType = action.payload
+    },
+    setDataPage(state, action){
+      state.dataPage = action.payload
     }
   },
 });
@@ -96,6 +100,8 @@ export const {
   setModalSign,
   setModalLoginClassName,
   setGoogleUser,
-  setAuthenticationType
+  setAuthenticationType,
+  setDataPage,
+  
 } = slice.actions;
 export const Reducer = slice.reducer;

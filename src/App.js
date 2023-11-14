@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RouterProvider } from "react-router-dom";
+import { Route, RouterProvider, Routes } from "react-router-dom";
 import {
   Context,
   GlobalStyle,
@@ -10,13 +10,13 @@ import {
   setUserServer,
   useLoader,
 } from "./Settings";
-import { Loader } from "./Components";
+import { Authentication, Loader, Login, Modal, Register } from "./Components";
 import { useContext, useEffect } from "react";
 import axios from "axios";
 
 function App() {
-  const { loader, users, searchBox, googleFirebaseUser,  } = useSelector(({ Reducer }) => Reducer);
-  const { setFirebaseModal} = useContext(Context)
+  const { loader, users, searchBox, googleFirebaseUser, modalSign, authenticationType } = useSelector(({ Reducer }) => Reducer);
+  const {firebaseModal, setFirebaseModal} = useContext(Context)
   const { openLoader } = useLoader();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -63,7 +63,9 @@ function App() {
   return (
     <>
       {loader && <Loader />}
+     
       <RouterProvider router={router} />
+      
       <GlobalStyle />
     </>
   );

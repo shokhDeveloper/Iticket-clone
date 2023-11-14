@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 99999999;
+    z-index: 9999999999999 !important;
     background: rgba(0,0,0,0.4);
    }
    .form__error_text{
@@ -84,3 +84,11 @@ export const FormikField = styled(Field)`
   outline: 1px solid transparent;
   font-size: 20px;
 `;
+export const Like = styled.input.attrs({
+  type: "checkbox"
+})`
+  appearance: none;
+  width: 50px;
+  height: 30px;
+  border: 1px solid yellow;
+`

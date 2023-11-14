@@ -5,7 +5,7 @@ export const router = createBrowserRouter(
         <>
             <Route path="/*" element={<Home/>}/>
             <Route path="/shopping" element={<h1>Hello</h1>}/>
-            <Route path="/tovar/:name" element={<TovarPage/>} />
+            <Route path="/tovar/:id" element={<TovarPage/>} />
         </>
     )
 )
