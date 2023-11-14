@@ -1,22 +1,24 @@
 import PopularJson from "../../Components/JSONS/popular.json";
 import KultutJson from "../../Components/JSONS/kultur.json";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./home.scss";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  Context,
   setMainAnimation,
   setModalSign,
   setSliderCountDec,
   setSliderCountInc,
 } from "../../Settings";
 import { HomeSlider } from "./HomeSlider";
-import { Article, Carousel, Footer, Header,Login,Register,SearchBox, ShoppingBtn } from "../../Components";
+import { Article, Authentication, Carousel, Footer, Header,Login,Register,SearchBox, ShoppingBtn } from "../../Components";
 import { Modal } from "../../Components";
 import { Route, Routes } from "react-router";
 export const Home = () => {
-  const { loader, mainAnimation, sliderCount, modalSign } = useSelector(
+  const { loader, mainAnimation, modalSign, authenticationType } = useSelector(
     ({ Reducer }) => Reducer
   );
+  const {setFirebaseModal, firebaseModal} = useContext(Context)
   const [mainSectionDisplay, setMainSectionDisplay] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -71,14 +73,19 @@ export const Home = () => {
         <Article/>
         <Footer/>
         {modalSign && (
-          <Modal modal={modalSign} setModal={setModalSign} links={{google: true, faceBook: true, wk: true}} title={"Войти"} >
+          <Modal modal={modalSign} setModal={setModalSign} links={{google: true, faceBook: true, wk: true}} title={"Войти"} context={false} >
             <Routes>
             <Route path="/" element={<Login modal={modalSign} setModal={setModalSign} />} />
             <Route path="/login" element={<Login modal={modalSign} setModal={setModalSign} />} />
             <Route path="/register" element={<Register modal={modalSign} setModal={setModalSign} />} />
           </Routes>
           </Modal>
-        )}
+       )}
+       {firebaseModal && (
+        <Modal modal={firebaseModal} setModal={setFirebaseModal} links={null} title={"Password kiriting"} context={true}>
+          <Authentication type={authenticationType} />
+        </Modal>
+       )}
         <ShoppingBtn/>
         </>
       )}  

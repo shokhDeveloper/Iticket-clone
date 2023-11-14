@@ -7,14 +7,16 @@
         "name": " Тамара Гвердцители",
         "date": "23 ноября 2023",
         "price": "300 000 UZS",
-        "vanue": "Дворец Международных Форумов"
+        "vanue": "Дворец Международных Форумов",
+        "id": 1
     },
     {
         "img": "https://cdn.iticket.uz/event/poster_bg/ZpOSFUiDvd8YNcnfIARXrUElxngjo6PfSiU7vT8r.jpg",
         "name": "TARKAN",
         "price": "255 000 UZS",
         "date": "11 ноября 2023",
-        "vanue": "Хумо Арена"
+        "vanue": "Хумо Арена",
+        "id": 2
     },
     {   
         "images":{
@@ -24,7 +26,8 @@
         "name": "Камызяки",
         "price": "50 000 UZS",
         "date": "23 ноября 2023",
-        "vanue": "Дворец «Дружбы народов»"
+        "vanue": "Дворец «Дружбы народов»",
+        "id": 3
     },
     {
         "images": {
@@ -34,7 +37,8 @@
         "price": "100 000 UZS",
         "name": "Markaziy osiyo WBC kamari uchun",
         "date": "17 ноября 2023",
-        "vanue": "Хумо Арена"
+        "vanue": "Хумо Арена",
+        "id": 4
     },
     {
         "price": "120 000 UZS",
@@ -44,7 +48,8 @@
             "imageUser": "https://cdn.iticket.uz/event/poster/ohTz01uQPFVKDSel5MaPMB1bSXQpWLYtvlJMWsyn.png"
         },
         "date": "17 ноября 2023",
-        "vanue": "Хумо Арена"
+        "vanue": "Хумо Арена",
+        "id": 5
     },
     {
         "images": {
@@ -54,6 +59,7 @@
         "name": "Jah Khalib",
         "price": "130 000 UZS",
         "date": "25 ноября 2023",
-        "vanue": "Хумо Арена"
+        "vanue": "Хумо Арена",
+        "id":6
     }
 ]

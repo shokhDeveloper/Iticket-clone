@@ -8,3 +8,4 @@ export * from "./ShoppingBtn";
 export * from "./Modal";
 export * from "./Login";
 export * from "./Register";
+export * from "./Authentication";

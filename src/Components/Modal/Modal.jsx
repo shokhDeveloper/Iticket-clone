@@ -1,19 +1,44 @@
 import { useLocation, useNavigate } from "react-router";
 import "./modal.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineClose } from "react-icons/ai";
+import { signInWithPopup } from "firebase/auth";
+import { auth, googleAuthProvider } from "../../Settings/firebase/firebase.config";
+import { Context, setAuthenticationType, setGoogleUser } from "../../Settings";
+import { useContext, useEffect } from "react";
 
-export const Modal = ({ title, setModal, links, children }) => {
+export const Modal = ({ title, setModal, links, children, context, modal }) => {
+  const {modalLoginClassName, googleFirebaseUser, authenticationType} = useSelector(({Reducer}) => Reducer)
   const { pathname } = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const path = pathname.substring(1, pathname.length).length
     ? pathname.substring(1, pathname.length)
     : "login";
+    const handleGoogle = () => { 
+      signInWithPopup(auth, googleAuthProvider).then(response => {
+        console.log(response)
+        if(response.user){ 
+         const {user:{displayName, email, }} = response
+         const user = {
+           name: displayName.split(" ")[0],
+           lastname: displayName.split(" ")[1],
+           email,
+           password: null
+         }
+         dispatch(setGoogleUser(user))
+        }
+      }) 
+    }
+    useEffect(() => {
+      if(googleFirebaseUser?.email && !googleFirebaseUser.password){
+        dispatch(setAuthenticationType(path))
+      }
+    },[googleFirebaseUser])
   return (
     <div className="modal__overlay overlay">
       <div className="modal">
-        <div className={`modal__body ${`modal_`.concat(path)}`}>
+        <div className={`modal__body ${`modal_`.concat(path).concat(path === "login" && modalLoginClassName ? "--active": "")} `} style={{height: path !== "login" && authenticationType === "register" ? "auto": "" }}>
           <div className="modal__header">
             <div className="modal_header__title_box">
               <h3>{title}</h3>
@@ -51,8 +76,8 @@ export const Modal = ({ title, setModal, links, children }) => {
                   </button>
                 )}
                 {links?.google && (
-                  <button className="modal_links__google border-transparent">
-                    <svg
+                  <button onClick={handleGoogle} className="modal_links__google border-transparent">
+                    <svg 
                       viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +98,11 @@ export const Modal = ({ title, setModal, links, children }) => {
           <button
             className="modal_close__btn border-transparent"
             onClick={() => {
-              dispatch(setModal(false));
+              if(context){
+                setModal(false)   
+              }else{
+                dispatch(setModal(false));
+              }
               navigate("/");
             }}
           >

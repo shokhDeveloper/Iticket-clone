@@ -7,7 +7,8 @@
     "name": "МОНО-СПЕКТАКЛЬ «ЗАГАДКА КОКО ШАНЕЛЬ»",
     "date": "21 января 2024",
     "vanue": "Дворец культуры железнодорожников",
-    "price": "300 000 UZS"
+    "price": "300 000 UZS",
+    "id": 7
   },
   {
     "images":{
@@ -17,7 +18,8 @@
     "name": "Концерт народного артиста Узбекистана Р.УСМАНОВА и оркестра «БРАВО»",
     "date": "16 ноябр 2023",
     "vanue": "A. Navoiy nomidagi DAKT",
-    "price": "55 000 UZS"
+    "price": "55 000 UZS",
+    "id": 8
   },
   {
     "images": {
@@ -27,7 +29,8 @@
     "price": "150 000 UZS",
     "name": "Мир Турецких Сериалов 2.0",
     "date": "14 ноябр 2023",
-    "vanue": "Turkiston saroyi"
+    "vanue": "Turkiston saroyi",
+    "id": 9
   },
   {
     "images": {
@@ -37,7 +40,8 @@
     "price": "300 000 UZS",
     "date": "16 ноябр 2023",
     "name": "ЛЕКЦИЯ «ВОСТОК И МОДА»",
-    "vanue": "Temir yo'lchilar madaniyat saroyi"
+    "vanue": "Temir yo'lchilar madaniyat saroyi",
+    "id": 10
   },
   {
     "images": {
@@ -47,6 +51,7 @@
     "name": "МАСТЕР-КЛАСС «ОРИЕНТАЛЬНЫЙ ИНТЕРЬЕР»",
     "date": "14 ноябр 2023",
     "price": "300 000 UZS",
-    "vanue": "Turkiston saroyi"
+    "vanue": "Turkiston saroyi",
+    "id": 11
   }
 ]

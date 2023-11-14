@@ -48,7 +48,6 @@ export const Register = ({modal, setModal}) => {
             dispatch(setUser(user))
            dispatch(setModal(false))
             openLoader()
-            
         }
     })
   })
@@ -57,6 +56,7 @@ export const Register = ({modal, setModal}) => {
      mutate({...event, date: `${date.toLocaleString()} Register-At its user` })
     }
   };
+
   return (
     <div className="modal_form__box">
       <Formik

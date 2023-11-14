@@ -1,5 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getItem, removeItem, setItem } from "../Utils";
+const defaultUser = {
+  name: null,
+  lastname: null,
+  email: null,
+  password: null
+}
 const initialState = {
   token: getItem("application-token") ? getItem("application-token") : null,
   user: getItem("application-user")
@@ -11,7 +17,10 @@ const initialState = {
   barDisplay: false,
   searchBox: false,
   users: [],
-  modalSign: false
+  modalSign: false,
+  modalLoginClassName: false,
+  googleFirebaseUser: defaultUser,
+  authenticationType: null
 };
 export const slice = createSlice({
   name: "ITICKET",
@@ -61,6 +70,15 @@ export const slice = createSlice({
     },
     setModalSign(state, action){
       state.modalSign = action.payload
+    },
+    setModalLoginClassName(state, action){
+     state.modalLoginClassName = action.payload 
+    },
+    setGoogleUser(state, action){
+      state.googleFirebaseUser = action.payload
+    },
+    setAuthenticationType(state, action){
+      state.authenticationType = action.payload
     }
   },
 });
@@ -75,6 +93,9 @@ export const {
   setBarDisplay,
   setSearchBox,
   setUserServer,
-  setModalSign
+  setModalSign,
+  setModalLoginClassName,
+  setGoogleUser,
+  setAuthenticationType
 } = slice.actions;
 export const Reducer = slice.reducer;

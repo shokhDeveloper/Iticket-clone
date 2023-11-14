@@ -3,10 +3,14 @@ import "./header.scss";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useCart } from "react-use-cart";
 import { setBarDisplay, setModalSign } from "../../Settings";
+import { useEffect } from "react";
 export const Header = () => {
   const {barDisplay, user, token} = useSelector(({Reducer}) => Reducer)
   const dispatch = useDispatch()
   const {items} = useCart()
+  useEffect(() => {
+    console.log(user)
+  },[user])
   return (
     <header className="site_header">
       <div className="site_header__inner">
@@ -104,8 +108,8 @@ export const Header = () => {
         <div className="site_header__settings">
             <NavLink className="site_header__link site_header__like" to={"/like"}/>
             <button  className={"site_header__link site_header__search border-transparent"} to={"/search"}/>    
-            <NavLink className={"site_header__link site_header__shopping"} to={"/"}>
-                <span className="shopping__count"> {items.length} </span>
+            <NavLink className={"site_header__link site_header__shopping"} to={token ? "/shopping": ""}>
+                <span className="shopping__count"> {token ? items.length: 0} </span>
             </NavLink>
             <NavLink to={token ? "/profile-settings": ""} style={{backgroundImage:  token ? "":  "url(https://www.freeiconspng.com/thumbs/person-icon/person-icon-5.png)" }} onClick={() => {
               if(token){
@@ -114,8 +118,15 @@ export const Header = () => {
                 dispatch(setModalSign(true))
               }
             }} className={"site_header__link site_header__profile"} >
-              
-              {token &&  user.name.charAt(0)}.{ token && user.lastname.charAt(0)}
+              {(function(token){
+                if(token){
+                  return(
+                    user?.name?.charAt(0).concat(".").concat(user?.lastname?.charAt(0))
+                  )
+                }else{
+                  return false
+                }
+              }(token))}  
             </NavLink>
         </div>
       </div>

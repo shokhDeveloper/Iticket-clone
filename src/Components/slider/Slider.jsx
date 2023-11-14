@@ -7,8 +7,22 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { SlideBtn } from '../../Settings';
 import { useState } from "react";
+import { useCart } from "react-use-cart";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router";
 export const Slider = (props) => {
+    const {token} = useSelector(({Reducer}) => Reducer)
     const [swiper, setSwiper] = useState(null)
+    const navigate = useNavigate()
+    const {addItem} = useCart()
+    const handleShop = (tovar) => {
+        if(token){
+            addItem(tovar)
+            
+        }else{
+            console.log("token yuq")
+        }
+    }
     const handleClick = (event) => {
         console.log(swiper)
         switch(event.target.id){
@@ -37,7 +51,7 @@ export const Slider = (props) => {
         <button onClick={handleClick} className='main__prev border-transparent swiper-button-prev' id="prev"></button>
         {props.json.map(item => {
             return(
-                <SwiperSlide className='slide'>
+                <SwiperSlide className='slide' onClick={() => navigate(`/tovar/${item.name}`) } >
                     <div className="slide__body">
                     {(function(slide){
                         if(slide.images){
@@ -62,7 +76,7 @@ export const Slider = (props) => {
                         <strong className='slide__user_name'>{item.name}</strong>
                         <p>Lorem ipsum dolor, sit amet consectetur  adsl</p>
                         </div>
-                    <SlideBtn className='slide__btn border-transparent'>{item.price}</SlideBtn>
+                    <SlideBtn onClick={() => handleShop(item)} className='slide__btn border-transparent'>{item.price}</SlideBtn>
                     </div>
                     </div>
                     <div className="slide__footer--active">

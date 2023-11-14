@@ -1,19 +1,22 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RouterProvider } from "react-router-dom";
 import {
+  Context,
   GlobalStyle,
   router,
   setBarDisplay,
+  setModalSign,
   setSearchBox,
   setUserServer,
   useLoader,
 } from "./Settings";
 import { Loader } from "./Components";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import axios from "axios";
 
 function App() {
-  const { loader, users, searchBox } = useSelector(({ Reducer }) => Reducer);
+  const { loader, users, searchBox, googleFirebaseUser,  } = useSelector(({ Reducer }) => Reducer);
+  const { setFirebaseModal} = useContext(Context)
   const { openLoader } = useLoader();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -51,6 +54,12 @@ function App() {
       handleGetUsers();
     }
   }, [users, searchBox]);
+  useEffect(() => {
+    if(googleFirebaseUser?.email && !googleFirebaseUser.password){
+      setFirebaseModal(true)
+      dispatch(setModalSign(false))
+    }
+  },[googleFirebaseUser])
   return (
     <>
       {loader && <Loader />}
