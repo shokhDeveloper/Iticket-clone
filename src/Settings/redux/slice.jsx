@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getItem, removeItem, setItem } from "../Utils";
+import kulturJSON from "../../Components/JSONS/kultur.json";
+import popularJSON from "../../Components/JSONS/popular.json";
+
 const defaultUser = {
   name: null,
   lastname: null,
@@ -12,6 +15,7 @@ const initialState = {
     ? JSON.parse(getItem("application-user"))
     : null,
   loader: getItem("application-loader") ? false : true,
+  likeTovars: getItem("application-like-tovars") ? JSON.parse(getItem("application-like-tovars")): [],
   mainAnimation: false,
   sliderCount: 0,
   barDisplay: false,
@@ -21,7 +25,8 @@ const initialState = {
   modalLoginClassName: false,
   googleFirebaseUser: defaultUser,
   authenticationType: null,
-  dataPage: null
+  dataPage: null,
+  resultTovarPage: null 
 };
 export const slice = createSlice({
   name: "ITICKET",
@@ -83,6 +88,46 @@ export const slice = createSlice({
     },
     setDataPage(state, action){
       state.dataPage = action.payload
+    },
+    setLike(state, action){
+      if(state.likeTovars.length){
+        if(!state.likeTovars.some(item => {
+          if(item.id === action.payload.id && item.parentId === action.payload.parentId){
+            return true
+          }else{
+            return false
+          }
+        })){
+          state.likeTovars = [...state.likeTovars, action.payload]
+          setItem("application-like-tovars", state.likeTovars)
+        }else{
+          state.likeTovars =  state.likeTovars
+        } 
+      }else{
+        state.likeTovars = [...state.likeTovars, action.payload]
+        setItem("application-like-tovars", state.likeTovars)
+      }
+    },
+    setNotLike(state, action){
+      try{
+        let tovar = state.likeTovars.find(item => item.id ===  action.payload.id && item.parentId === action.payload.parentId)
+        const idx = state.likeTovars.findIndex(item => tovar.id === item.id && tovar.parentId === item.parentId)
+        let jsonLikeTovars = JSON.stringify(state.likeTovars)
+        let jsonParseLikeTovars = JSON.parse(jsonLikeTovars)
+        jsonParseLikeTovars.splice(idx, 1)
+        state.likeTovars = jsonParseLikeTovars
+        setItem("application-like-tovars", state.likeTovars)
+      }catch(error){
+          return error
+      }
+    },
+    setTovarResultPage(state, action){
+      let result = null;
+      result = kulturJSON.find((item) => item.id === (action.payload-0));
+      if (!result?.id) {
+        result = popularJSON.find((item) => item.id === (action.payload-0));
+      }
+      state.resultTovarPage = [result]
     }
   },
 });
@@ -102,6 +147,8 @@ export const {
   setGoogleUser,
   setAuthenticationType,
   setDataPage,
-  
+  setLike,
+  setNotLike,
+  setTovarResultPage
 } = slice.actions;
 export const Reducer = slice.reducer;

@@ -3,35 +3,40 @@ import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes, useParams } from "react-router";
 import { BsSendFill } from "react-icons/bs";
-
 import kulturJSON from "../../Components/JSONS/kultur.json";
 import popularJSON from "../../Components/JSONS/popular.json";
 import {
-    Button,
+  Button,
   Context,
-  Like,
   setDataPage,
   setModalSign,
+  setTovarResultPage,
   useBack,
 } from "../../Settings";
 import {
   Authentication,
+  Footer,
   Header,
+  Like,
   Login,
   Modal,
   Register,
   SearchBox,
+  ShoppingBtn,
+  TovarPageInfos,
 } from "../../Components";
 import axios from "axios";
+import { useCart } from "react-use-cart";
 export const TovarPage = () => {
   const { dataPage, authenticationType, modalSign } = useSelector(
     ({ Reducer }) => Reducer
   );
-  const {back, typeBack} = useBack(true)
+  const { back, typeBack } = useBack(true);
   const { mainActive, setFirebaseModal, firebaseModal, signType } =
     useContext(Context);
   const dispatch = useDispatch();
   const { id } = useParams();
+  const {addItem} = useCart()
   useEffect(() => {
     (async function () {
       try {
@@ -48,47 +53,66 @@ export const TovarPage = () => {
     })();
   }, [id]);
   useEffect(() => {
-    if(typeBack){
-        back()
+    if (typeBack) {
+      back();
     }
-  },[typeBack])
+  }, [typeBack]);
+  useEffect(() => {
+     dispatch(setTovarResultPage(id)) 
+  },[id])
   return (
     <>
-      <section className="main" style={{background: "#f9f9f9"}}>
+      <section className={`main ${mainActive ? "main__active": ""}`} style={{ background: "#dcdada" }}>
         <div className="container">
           <div
             className={`main__section`.concat(mainActive ? " tovar__page" : "")}
-            style={{ border: "1px solid black" }}
           >
             <Header />
-            <SearchBox/>
+            <SearchBox />
             {dataPage?.map((item) => {
               return (
-                <div className="main__tovar_page" style={{backgroundImage: `url(${item.img})`}} key={item.id}>
+                <div
+                  className="main__tovar_page"
+                  style={{ backgroundImage: `url(${item.img})` }}
+                  key={item.id}
+                >
                   <div className="main_tovar__btns">
-                    {(function(id){
-                        let result = null
-                        result = kulturJSON.find(item => item.id === id) 
-                        result = popularJSON.find(item => item.id === id)
-                        if(result?.id){
-                            return(
-                                <Button className="border-transparent border" style={{marginBottom: "1rem"}}>{result.price}</Button>
-                            )
-                        }
-                    }(item.id))}
-                <Like/>
-                    <button className="border-transparent">
-                    <BsSendFill />
-                    </button>
+                    {(function (id) {
+                      let result = null;
+                      result = kulturJSON.find((item) => item.id === id);
+                      if (!result?.id) {
+                        result = popularJSON.find((item) => item.id === id);
+                      }
+                      if (result?.id) {
+                        return (
+                          <>
+                            <Button
+                            onClick={() => {
+                                addItem(result)
+                            }}
+                              className="border-transparent border"
+                              style={{ marginBottom: "1rem" }}
+                            >
+                              {result.price}
+                            </Button>
+                            <Like tovar={result} />
+                            <button className="border-transparent">
+                              <BsSendFill />
+                            </button>
+                          </>
+                        );
+                      }
+                    })(item.id)}
                   </div>
                 </div>
               );
             })}
-
           </div>
         </div>
       </section>
-      
+      <TovarPageInfos/>
+      <ShoppingBtn/>
+      <Footer/>
       {modalSign && (
         <Modal
           modal={modalSign}

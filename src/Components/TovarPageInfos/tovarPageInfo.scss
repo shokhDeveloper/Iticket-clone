@@ -1,0 +1,79 @@
+@use "../../Settings/scss/functions.scss";
+.about__cards{
+    display: grid;
+    grid-template: repeat(1, auto) / repeat(4, 1fr);
+    justify-content: space-between;
+    grid-gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin: 10px 0px;
+}
+.about__cards .about__card{
+    border-radius: 40px;
+    background: rgba(255,255,255, 1);
+    padding: 20px;
+    width: 100%;
+}
+.about__card .about_card__info{
+    width: 100%;
+    @include functions.flex(space-between);
+}
+.about__card .about_card__info::before{
+    content: " ";
+    display: inline-block;
+    width: 50%;
+    height: 60px;
+    background-image: url("https://iticket.uz/images/venue.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.about__card:nth-child(2) .about_card__info::before{
+    background-image: url("https://iticket.uz/images/locale.svg");
+}
+.about__card:nth-child(3) .about_card__info::before{
+    background-image: url("https://iticket.uz/images/currency.svg");
+}
+.about__card:nth-child(4) .about_card__info::before{
+    background-image: url("https://iticket.uz/images/info.svg");
+}
+.about_card__title_box{
+    text-align: start;
+    width: 50%;
+}
+.about_card__title_box span{
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+}
+.about__adress{
+    width: 100%;
+    margin-top: 4rem;
+}
+.about__adress .about_adress__infos{
+    width: 100%;
+    background: #fff;
+    @include functions.grid(1, auto, 3, 30%);
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 20px;
+}
+.about_adress__infos .about_adress__info{
+    text-align: start;
+}
+.about_adress__infos .about_adress__info *{
+    margin: 0;
+    padding: 0;
+}
+.about_adress__infos .about_adress__info .about_adress__data{
+    padding: 0.5rem 0rem;
+    color: black;
+    font-size: 25px;
+    font-weight: 400;
+}
+.about_adress__infos .about_adress__info .about_adress__key{
+    font-size: 20px;
+    color: grey;
+    font-weight: 400;
+}

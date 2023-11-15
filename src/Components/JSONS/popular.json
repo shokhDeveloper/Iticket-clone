@@ -8,7 +8,8 @@
         "date": "23 ноября 2023",
         "price": "300 000 UZS",
         "vanue": "Дворец Международных Форумов",
-        "id": 1
+        "id": 1,
+        "parentId": 0
     },
     {
         "img": "https://cdn.iticket.uz/event/poster_bg/ZpOSFUiDvd8YNcnfIARXrUElxngjo6PfSiU7vT8r.jpg",
@@ -16,7 +17,9 @@
         "price": "255 000 UZS",
         "date": "11 ноября 2023",
         "vanue": "Хумо Арена",
-        "id": 2
+        "id": 2,
+        "parentId": 0
+    
     },
     {   
         "images":{
@@ -27,7 +30,9 @@
         "price": "50 000 UZS",
         "date": "23 ноября 2023",
         "vanue": "Дворец «Дружбы народов»",
-        "id": 3
+        "id": 3,
+        "parentId": 0
+    
     },
     {
         "images": {
@@ -38,7 +43,9 @@
         "name": "Markaziy osiyo WBC kamari uchun",
         "date": "17 ноября 2023",
         "vanue": "Хумо Арена",
-        "id": 4
+        "id": 4,
+        "parentId": 0
+    
     },
     {
         "price": "120 000 UZS",
@@ -49,7 +56,9 @@
         },
         "date": "17 ноября 2023",
         "vanue": "Хумо Арена",
-        "id": 5
+        "id": 5,
+        "parentId": 0
+    
     },
     {
         "images": {
@@ -60,6 +69,8 @@
         "price": "130 000 UZS",
         "date": "25 ноября 2023",
         "vanue": "Хумо Арена",
-        "id":6
+        "id":6,
+        "parentId": 0
+    
     }
 ]

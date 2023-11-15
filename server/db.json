@@ -1,6 +1,13 @@
 {
   "users": [
-  
+    {
+      "email": "shohijahonmusinkulov@gmail.com",
+      "password": "$2a$10$ILdZRkjiaEkaFNgBmErIqeBoCeOuJCwMUdookMjqm4LEuIi3O3mAe",
+      "name": "Shohijahon",
+      "lastname": "Musinkulov",
+      "date": "15.11.2023, 12:41:24 Login-At its user !",
+      "id": 1
+    }
   ],
   "posts": [],
   "slider-images": [
@@ -31,68 +38,66 @@
       }
     ]
   ],
-  "all-tovar":
-    [
-      {
-        "img": "https://cdn.iticket.uz/event/slide/7WypILfaX7A66ioTRZVEMIBSWJsOkcUxKwwhVmlJ.jpg",
-        "url": "https://iticket.uz",
-        "KEY": "Тамара",
-        "id": 1
-      },
-      {
-        "img": "https://cdn.iticket.uz/event/slide/fqmUx4kKZRXrl3NJJxl1uG0dPEdjmUjnuxzmLeVc.jpg",
-        "url": "https://iticket.uz",
-        "KEY": "TARKAN",
-        "id": 2
-        
-      },
-      {
-        "img": "https://cdn.iticket.uz/event/slide/Kxl9JjEp3NnprGc01ovl2JJyKqtXUcYkaOm4F6PU.jpg",
-        "url": "https://iticket.uz",
-        "KEY": "Камызяки",
-        "id": 3
-      },
-      {
-        "img": "https://cdn.iticket.uz/event/slide/uOevafVDweLPhZ1hH4k1C4qbqVFQTmurOtJdQJrd.jpg",
-        "url": "https://iticket.uz",
-        "key": "ЗАЖИГАЙ",
-        "id": 5
-      },
-      {
-        "img": "https://cdn.iticket.uz/event/slide/s6pzIqFyuq6f5CQoYkMoANaALuJw2bGBAsGxUmLx.jpg",
-        "url": "https://iticket.uz",
-        "KEY": "WBC",
-        "id": 4
-      },
-      {
-        "img": "https://cdn.iticket.uz/event/cover/1PDql4lyvJszTadYwV6UudXjPmwpFCRS8QFccdvt.jpg",
-        "url": "https://iticket.uz",
-        "KEY": "Khalib",
-        "id": 6
-      },
-      {
-        "img": "https://cdn.iticket.uz/event/cover/lelkRfvfnvV8T5G2CfatwjB74a2w0tb6GhwTP4Zn.jpg",
-        "url": "https://iticket.uz",
-        "KEY": "КОКО",
-        "id": 7
-      },
-      {
-        "img": "https://cdn.iticket.uz/event/cover/rT4ltPHaWRgkVsYDEshh6VkOMme1OTP84ydPmvuF.jpg",
-        "url": "https://iticket.uz",
-        "KEY": "БРАВО",
-        "id": 8
-      },
-      {
-        "img": "https://cdn.iticket.uz/event/cover/3CRLNLfFAuWeYr1tuiBpv09KvHANTTSEQal5BWEY.jpg",
-        "url": "https://iticket.uz",
-        "KEY": "ЛЕКЦИЯ",
-        "id": 10
-      },
-      {
-        "img": "https://cdn.iticket.uz/event/cover/MXkqTcGs4mwTRJjjk7BrKDJMhjmsZS0ea18h62bk.jpg",
-        "url": "https://iticket.uz",
-        "KEY": "Турецких",
-        "id": 9
-      }
+  "all-tovar": [
+    {
+      "img": "https://cdn.iticket.uz/event/slide/7WypILfaX7A66ioTRZVEMIBSWJsOkcUxKwwhVmlJ.jpg",
+      "url": "https://iticket.uz",
+      "KEY": "Тамара",
+      "id": 1
+    },
+    {
+      "img": "https://cdn.iticket.uz/event/slide/fqmUx4kKZRXrl3NJJxl1uG0dPEdjmUjnuxzmLeVc.jpg",
+      "url": "https://iticket.uz",
+      "KEY": "TARKAN",
+      "id": 2
+    },
+    {
+      "img": "https://cdn.iticket.uz/event/slide/Kxl9JjEp3NnprGc01ovl2JJyKqtXUcYkaOm4F6PU.jpg",
+      "url": "https://iticket.uz",
+      "KEY": "Камызяки",
+      "id": 3
+    },
+    {
+      "img": "https://cdn.iticket.uz/event/slide/uOevafVDweLPhZ1hH4k1C4qbqVFQTmurOtJdQJrd.jpg",
+      "url": "https://iticket.uz",
+      "key": "ЗАЖИГАЙ",
+      "id": 5
+    },
+    {
+      "img": "https://cdn.iticket.uz/event/slide/s6pzIqFyuq6f5CQoYkMoANaALuJw2bGBAsGxUmLx.jpg",
+      "url": "https://iticket.uz",
+      "KEY": "WBC",
+      "id": 4
+    },
+    {
+      "img": "https://cdn.iticket.uz/event/cover/1PDql4lyvJszTadYwV6UudXjPmwpFCRS8QFccdvt.jpg",
+      "url": "https://iticket.uz",
+      "KEY": "Khalib",
+      "id": 6
+    },
+    {
+      "img": "https://cdn.iticket.uz/event/cover/lelkRfvfnvV8T5G2CfatwjB74a2w0tb6GhwTP4Zn.jpg",
+      "url": "https://iticket.uz",
+      "KEY": "КОКО",
+      "id": 7
+    },
+    {
+      "img": "https://cdn.iticket.uz/event/cover/rT4ltPHaWRgkVsYDEshh6VkOMme1OTP84ydPmvuF.jpg",
+      "url": "https://iticket.uz",
+      "KEY": "БРАВО",
+      "id": 8
+    },
+    {
+      "img": "https://cdn.iticket.uz/event/cover/3CRLNLfFAuWeYr1tuiBpv09KvHANTTSEQal5BWEY.jpg",
+      "url": "https://iticket.uz",
+      "KEY": "ЛЕКЦИЯ",
+      "id": 10
+    },
+    {
+      "img": "https://cdn.iticket.uz/event/cover/MXkqTcGs4mwTRJjjk7BrKDJMhjmsZS0ea18h62bk.jpg",
+      "url": "https://iticket.uz",
+      "KEY": "Турецких",
+      "id": 9
+    }
   ]
 }

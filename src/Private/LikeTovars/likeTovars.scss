@@ -1,0 +1,9 @@
+.like__tovars{
+    display: grid;
+    grid-template: repeat(1, auto) / repeat(3, 1fr);
+    grid-gap: 40px;
+    margin-top: 1rem;
+}
+.like__tovars .slide{
+    width: 100%;
+}

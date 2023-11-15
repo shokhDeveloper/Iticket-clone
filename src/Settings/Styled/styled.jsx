@@ -9,7 +9,8 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         overflow-x: hidden;
-    }
+      background: rgb(220, 218, 218);
+      }
     .container{
         max-width: 1450px;
         margin: 0 auto;
@@ -34,12 +35,26 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
    }
+
+   .error{
+    color: crimson;
+   }
    .error-input{
     border: 1px solid crimson;
     outline: 1px solid crimson;
    }
    .error-input::placeholder{
     color: crimson;
+   }
+   .active-header{
+      color: #bebebe !important;
+      filter: invert(0) !important;
+    }
+   .active-header-border{
+    border: 1px solid rgb(190, 190, 190) !important;
+   }
+   .active-header-link{
+     color: black !important;
    }
 `;
 
@@ -90,5 +105,12 @@ export const Like = styled.input.attrs({
   appearance: none;
   width: 50px;
   height: 30px;
-  border: 1px solid yellow;
+`
+export const ErrorBox = styled.div`
+  width: 100%;
+  text-align: center;
+`
+export const ErrorTitle = styled.h3`
+  font-size: 30px;
+  color: crimson;
 `
