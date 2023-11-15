@@ -59,6 +59,7 @@ export const TovarPage = () => {
   }, [typeBack]);
   useEffect(() => {
      dispatch(setTovarResultPage(id)) 
+     window.scrollTo(0,0)
   },[id])
   return (
     <>

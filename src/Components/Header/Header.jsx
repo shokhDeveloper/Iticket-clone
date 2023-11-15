@@ -113,13 +113,13 @@ export const Header = ({active}) => {
             <NavLink className={`site_header__link site_header__shopping ${active ? "active-header": ""}  `} to={token ? "/shopping": ""}>
                 <span className={`shopping__count ${active && "active-header-color"}`}> {token ? items.length: ""} </span>
             </NavLink>
-            <NavLink   style={{backgroundImage:  token ? "":  "url(https://www.freeiconspng.com/thumbs/person-icon/person-icon-5.png)" }} onClick={() => {
+            <NavLink  style={{backgroundImage:  token ? "":  "url(https://www.freeiconspng.com/thumbs/person-icon/person-icon-5.png)" }} onClick={() => {
               if(token){
                 return false
               }else{
                 dispatch(setModalSign(true))
               }
-            }} className={"site_header__link site_header__profile"} >
+            }} className={"site_header__link site_header__profile"} to={token ? "/profile-settings": ""} >
               {(function(token){
                 if(token){
                   return(

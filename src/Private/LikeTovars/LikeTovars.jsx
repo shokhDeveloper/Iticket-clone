@@ -1,19 +1,17 @@
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { ErrorBox, ErrorTitle, SlideBtn, useBack, useLoader } from "../../Settings";
+import { useContext, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Context, ErrorBox, ErrorTitle, SlideBtn, useBack, useLoader } from "../../Settings";
 import { Header, SearchBox } from "../../Components";
 import "./likeTovars.scss";
 import { useNavigate } from "react-router";
 import { useCart } from "react-use-cart";
 export const LikeTovars = () => {
   const { likeTovars } = useSelector(({ Reducer }) => Reducer);
+  const {saveTovars, setSaveTovars} = useContext(Context)
   const { openLoader } = useLoader();
   const navigate = useNavigate();
   const { back, typeBack } = useBack(true);
   const { addItem } = useCart();
-  useEffect(() => {
-    console.log(likeTovars);
-  }, [likeTovars]);
   const handleClick = (event, item) => {
     if (!event.target.matches(".shop-btn")) {
       openLoader();
@@ -22,11 +20,25 @@ export const LikeTovars = () => {
       addItem(item);
     }
   };
+  const handleFilter = (event) => {
+    let filter;
+    if(event.target.value === "all"){
+      filter = likeTovars
+    }else{
+      filter = likeTovars?.filter(item => item.vanue === event.target.value)
+    }
+    setSaveTovars(filter)
+  }
   useEffect(() => {
     if (typeBack) {
       back();
     }
   }, [typeBack]);
+  useEffect(() => {
+    if(likeTovars?.length){
+      setSaveTovars(likeTovars)
+    }
+  },[likeTovars])
   return (
     <section className="like">
       <Header active={true} />
@@ -35,10 +47,10 @@ export const LikeTovars = () => {
         <div className="like__title_box">
           <h2>Избранные</h2>
         </div>
-        {likeTovars?.length ?  (
+        {saveTovars?.length ?  (
             <div className="like__search_inner">
-            <select className="like__search_select">
-              <option value="default" selected disabled>
+            <select onChange={handleFilter} className="like__search_select border-transparent">
+              <option value="all" >
                 Выберите место проведения
               </option>
             {likeTovars?.map(item =>{
@@ -49,11 +61,11 @@ export const LikeTovars = () => {
             </select>
           </div>
         ): null}
-        {likeTovars?.length ? (
+        {saveTovars?.length ? (
           <div className="like__tovars" style={{ position: "relative" }}>
-            {likeTovars?.map((item) => {
+            {saveTovars?.map((item) => {
               return (
-                <div
+                <div style={{position: "relative"}}
                   className="slide"
                   onClick={(event) => handleClick(event, item)}
                   key={item.id}

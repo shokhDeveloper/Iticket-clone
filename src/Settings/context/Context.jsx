@@ -8,6 +8,7 @@ export const ContextProvider = ({children}) => {
     const [mainActive, setMainActive] = useState(pageActiveStorage )
     const [signType, setSignType] = useState("login")
     const [likeTovar, setLikeTovar] = useState(false)
+    const [saveTovars, setSaveTovars] = useState()
     useEffect(() => {
         if(mainActive){
             setItem("page-active", "true")
@@ -16,7 +17,7 @@ export const ContextProvider = ({children}) => {
         }
     },[mainActive])   
     return(
-        <Context.Provider value={{firebaseModal, setFirebaseModal, mainActive, setMainActive, signType, setSignType, likeTovar, setLikeTovar}}>
+        <Context.Provider value={{firebaseModal, setFirebaseModal, mainActive, setMainActive, signType, setSignType, likeTovar, setLikeTovar, saveTovars, setSaveTovars }}>
             {children}
         </Context.Provider>
     )

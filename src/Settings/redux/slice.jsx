@@ -2,7 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getItem, removeItem, setItem } from "../Utils";
 import kulturJSON from "../../Components/JSONS/kultur.json";
 import popularJSON from "../../Components/JSONS/popular.json";
-
+import Tamara from "../../Settings/assets/images/Tamara.jpg"
+import Reklama from "../../Settings/assets/images/Reklama.jpg";
+import Kamizyaki from "../../Settings/assets/images/Kamizyaki.jpg";
+import Zamaj from "../../Settings/assets/images/Zajigay.jpg"
+import Tarkan from "../../Settings/assets/images/Tarkan.jpg";
+import WBS from "../../Settings/assets/images/WBS.jpg"
 const defaultUser = {
   name: null,
   lastname: null,
@@ -26,7 +31,9 @@ const initialState = {
   googleFirebaseUser: defaultUser,
   authenticationType: null,
   dataPage: null,
-  resultTovarPage: null 
+  resultTovarPage: null ,
+  sliderArray: [Tamara, Reklama, Kamizyaki, Zamaj, Tarkan, WBS],
+  profileData: null
 };
 export const slice = createSlice({
   name: "ITICKET",
@@ -128,6 +135,9 @@ export const slice = createSlice({
         result = popularJSON.find((item) => item.id === (action.payload-0));
       }
       state.resultTovarPage = [result]
+    },
+    setProfileData(state, action){
+      state.profileData = action.payload
     }
   },
 });
@@ -149,6 +159,7 @@ export const {
   setDataPage,
   setLike,
   setNotLike,
-  setTovarResultPage
+  setTovarResultPage,
+  setProfileData
 } = slice.actions;
 export const Reducer = slice.reducer;
