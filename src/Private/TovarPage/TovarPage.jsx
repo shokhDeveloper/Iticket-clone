@@ -3,8 +3,6 @@ import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes, useParams } from "react-router";
 import { BsSendFill } from "react-icons/bs";
-import kulturJSON from "../../Components/JSONS/kultur.json";
-import popularJSON from "../../Components/JSONS/popular.json";
 import {
   Button,
   Context,
@@ -27,6 +25,9 @@ import {
 } from "../../Components";
 import axios from "axios";
 import { useCart } from "react-use-cart";
+import { Kultur } from "../../Components/Kultur";
+import { Popular } from "../../Components/Popular";
+import { AllTovarBackground } from "../../Components/AllTovarbackground";
 export const TovarPage = () => {
   const { dataPage, authenticationType, modalSign } = useSelector(
     ({ Reducer }) => Reducer
@@ -38,18 +39,9 @@ export const TovarPage = () => {
   const { id } = useParams();
   const {addItem} = useCart()
   useEffect(() => {
-    (async function () {
-      try {
-        const request = await axios
-          .get(process.env.REACT_APP_SERVER + `/all-tovar/${id}`)
-          .catch((error) => console.log(error));
-        if (request.status === 200 || request.status === 304) {
-          const response = await request.data;
-          dispatch(setDataPage([response]));
-        }
-      } catch (error) {
-        return error;
-      }
+    (function () {
+      const filter = AllTovarBackground.filter(item => item.id === (id-0))
+      dispatch(setDataPage(filter))
     })();
   }, [id]);
   useEffect(() => {
@@ -80,9 +72,9 @@ export const TovarPage = () => {
                   <div className="main_tovar__btns">
                     {(function (id) {
                       let result = null;
-                      result = kulturJSON.find((item) => item.id === id);
+                      result = Kultur.find((item) => item.id === id);
                       if (!result?.id) {
-                        result = popularJSON.find((item) => item.id === id);
+                        result = Popular.find((item) => item.id === id);
                       }
                       if (result?.id) {
                         return (

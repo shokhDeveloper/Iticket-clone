@@ -298,3 +298,16 @@ body{
 .main__active{
   min-height: 90vh; 
 }
+.profile__inner{
+  @include functions.flex(center);
+  flex-direction: column;
+}
+.profile__title_box h2{
+  font-size: 35px;
+}
+.profile__form{
+  width: 30%;
+}
+.profile__form input{
+  margin: 1rem 0rem;
+}

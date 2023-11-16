@@ -2,11 +2,11 @@
   "users": [
     {
       "email": "shohijahonmusinkulov@gmail.com",
-      "password": "$2a$10$ILdZRkjiaEkaFNgBmErIqeBoCeOuJCwMUdookMjqm4LEuIi3O3mAe",
-      "name": "Shohijahon",
+      "name": "Shohjahon",
       "lastname": "Musinkulov",
-      "date": "15.11.2023, 12:41:24 Login-At its user !",
-      "id": 1
+      "date": "16.11.2023, 10:49:47 Update-it its user data !",
+      "id": 1,
+      "password": "$2a$10$W01ZXNbWwNARcKxRvKajbOYOXp5OmmicoQ60eEklXDqzms9gDPMy."
     }
   ],
   "posts": [],

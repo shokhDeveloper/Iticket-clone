@@ -1,21 +1,23 @@
-import PopularJson from "../../Components/JSONS/popular.json";
-import KultutJson from "../../Components/JSONS/kultur.json";
+// import PopularJson from "../../Components/JSONS/popular.json";
+// import KultutJson from "../../Components/JSONS/kultur.json";
+import { Kultur as KultutJson } from "../../Components/Kultur";
+import { Popular as PopularJson } from "../../Components/Popular";
 import { useContext, useEffect, useState } from "react";
 import "./home.scss";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Context,
+  setLoginAlert,
   setMainAnimation,
   setModalSign,
   setSliderCountDec,
   setSliderCountInc,
 } from "../../Settings";
 import { HomeSlider } from "./HomeSlider";
-import { Article, Authentication, Carousel, Footer, Header,Login,Register,SearchBox, ShoppingBtn } from "../../Components";
+import { Alert, Article, Authentication, Carousel, Footer, Header,Login,Register,SearchBox, ShoppingBtn } from "../../Components";
 import { Modal } from "../../Components";
-import { Route, Routes } from "react-router";
 export const Home = () => {
-  const { loader, mainAnimation, modalSign, authenticationType } = useSelector(
+  const { loader, mainAnimation, modalSign, authenticationType, loginAlert } = useSelector(
     ({ Reducer }) => Reducer
   );
   const {setFirebaseModal, firebaseModal, signType} = useContext(Context)
@@ -86,6 +88,7 @@ export const Home = () => {
           <Authentication type={authenticationType} />
         </Modal>
        )}
+        <Alert error={true} alert={loginAlert} setAlert={setLoginAlert} discription={"Bunday user mavjud emas !"}/>
         <ShoppingBtn/>
         </>
       )}  

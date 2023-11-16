@@ -12,3 +12,4 @@ export * from "./Authentication";
 export * from "./Like";
 export * from "./TovarPageInfos";
 export * from "./Adress";
+export * from "./Alert";

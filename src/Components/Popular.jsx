@@ -1,8 +1,20 @@
-[
+import TamaraJPEG from "../Settings/assets/images/TamaraBackground.jpg"
+import TamaraPNG from "../Settings/assets/images/TamaraPng.png"
+import TarkanJPG from "../Settings/assets/images/TarkanBackground.jpg";
+import TarkanPNG from "../Settings/assets/images/TarkanPNG.png";
+import KamizyAKjpg from "../Settings/assets/images/KamizYakiBckground.jpg"
+import KamizyakPNG from "../Settings/assets/images/KamizyakiPNG.png"
+import WBSJPEG from "../Settings/assets/images/WBSBackground.jpg";
+import WBSPNG from "../Settings/assets/images/WBSPNG.png";
+import Zajigay from "../Settings/assets/images/ZajigayBackground.jpg";
+import ZajigayPNG from "../Settings/assets/images/ZajigayPNG.png";
+import JahJPEG from "../Settings/assets/images/KhalibBackground.jpg"
+import JahPNG from "../Settings/assets/images/KhalibPNG.png"
+export const Popular = [
     {
         "images": {
-            "imageBackground": "https://cdn.iticket.uz/event/poster_bg/KZAGKcjJuOdxAXczloAHketDeBQZfQAi84cdr3Zg.jpg",
-            "imageUser": "https://cdn.iticket.uz/event/poster/7BFB8QGX5370FSQBxpzk3rMuG1barvKsHpEw18Cf.png"
+            "imageBackground": TamaraJPEG,
+            "imageUser": TamaraPNG
         },
         "name": " Тамара Гвердцители",
         "date": "23 ноября 2023",
@@ -12,7 +24,10 @@
         "parentId": 0
     },
     {
-        "img": "http://via.placeholder.com/200x200",
+        images: {
+            imageBackground: TarkanJPG,
+            imageUser: TarkanPNG
+        },
         "name": "TARKAN",
         "price": "255 000 UZS",
         "date": "11 ноября 2023",
@@ -23,8 +38,8 @@
     },
     {   
         "images":{
-        "imageBackground": "https://cdn.iticket.uz/event/poster_bg/0pmzBaEt31rx7xIUO7TfWMKqZt4RkEK5Ke4ocD7B.jpg",
-        "imageUser": "https://cdn.iticket.uz/event/poster/Y38C3gk45HuPOOfdN7mdBiKCgA34njb8EafhAdiU.png"  
+        "imageBackground": KamizyAKjpg,
+        "imageUser": KamizyakPNG  
     },
         "name": "Камызяки",
         "price": "50 000 UZS",
@@ -36,8 +51,8 @@
     },
     {
         "images": {
-            "imageBackground": "https://cdn.iticket.uz/event/poster_bg/LuBT6s7N5Vifcfuc6QhAAJW2CMTU8KwMFDfJQl2c.jpg",
-            "imageUser": "https://cdn.iticket.uz/event/poster/uVT3rAiT3CjiVvc9iFiAOddhiqZXu4FhmECnbq5y.png"
+            "imageBackground": WBSJPEG,
+            "imageUser": WBSPNG
         },
         "price": "100 000 UZS",
         "name": "Markaziy osiyo WBC kamari uchun",
@@ -51,8 +66,8 @@
         "price": "120 000 UZS",
         "name": "Новогодний концерт ЗАЖИГАЙ",
         "images": {
-            "imageBackground": "https://cdn.iticket.uz/event/poster_bg/DO3h2EWaO3kHKmP5quCCRjEuxbBrqanGIClAkqJu.jpg",
-            "imageUser": "https://cdn.iticket.uz/event/poster/ohTz01uQPFVKDSel5MaPMB1bSXQpWLYtvlJMWsyn.png"
+            "imageBackground": Zajigay,
+            "imageUser": ZajigayPNG
         },
         "date": "17 ноября 2023",
         "vanue": "Хумо Арена",
@@ -62,8 +77,8 @@
     },
     {
         "images": {
-            "imageBackground": "https://cdn.iticket.uz/event/poster_bg/qaJdoOxCgkJasDNGCIPBgNIKspSbKAVPz1yK1Qhi.jpg",
-            "imageUser": "https://cdn.iticket.uz/event/poster/9R7lcvVw2tzx8fmX0EKRLxvOtDm7Zg6gEzbaGwW0.png"
+            "imageBackground": JahJPEG,
+            "imageUser": JahPNG
         },
         "name": "Jah Khalib",
         "price": "130 000 UZS",

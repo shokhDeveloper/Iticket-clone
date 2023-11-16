@@ -72,6 +72,7 @@ export const Button = styled(SlideBtn).attrs({
   type: "submit",
 })`
   width: 100% !important;
+  opacity: ${({styledType}) => styledType ? "0.3": "1"}
 `;
 export const Input = styled.input`
   display: block;

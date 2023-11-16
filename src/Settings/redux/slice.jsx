@@ -8,6 +8,8 @@ import Kamizyaki from "../../Settings/assets/images/Kamizyaki.jpg";
 import Zamaj from "../../Settings/assets/images/Zajigay.jpg"
 import Tarkan from "../../Settings/assets/images/Tarkan.jpg";
 import WBS from "../../Settings/assets/images/WBS.jpg"
+import { Kultur } from "../../Components/Kultur";
+import { Popular } from "../../Components/Popular";
 const defaultUser = {
   name: null,
   lastname: null,
@@ -33,7 +35,11 @@ const initialState = {
   dataPage: null,
   resultTovarPage: null ,
   sliderArray: [Tamara, Reklama, Kamizyaki, Zamaj, Tarkan, WBS],
-  profileData: null
+  profileData: null,
+  profileDisabled: true,
+  profileSuccessUpdateAlert: false,
+  profileErrorUpdateAlert: false,
+  loginAlert: false
 };
 export const slice = createSlice({
   name: "ITICKET",
@@ -130,14 +136,26 @@ export const slice = createSlice({
     },
     setTovarResultPage(state, action){
       let result = null;
-      result = kulturJSON.find((item) => item.id === (action.payload-0));
+      result = Kultur.find((item) => item.id === (action.payload-0));
       if (!result?.id) {
-        result = popularJSON.find((item) => item.id === (action.payload-0));
+        result = Popular.find((item) => item.id === (action.payload-0));
       }
       state.resultTovarPage = [result]
     },
     setProfileData(state, action){
       state.profileData = action.payload
+    },
+    setProfileDisabled(state, action){
+      state.profileDisabled = action.payload
+    },
+    setProfileSuccessUpdateAlert(state, action ){
+      state.profileSuccessUpdateAlert = action.payload
+    },
+    setProfileErrorUpdateAlert(state, action){
+      state.profileErrorUpdateAlert = action.payload
+    },
+    setLoginAlert(state, action){
+      state.loginAlert = action.payload
     }
   },
 });
@@ -160,6 +178,10 @@ export const {
   setLike,
   setNotLike,
   setTovarResultPage,
-  setProfileData
+  setProfileData,
+  setProfileDisabled,
+  setProfileSuccessUpdateAlert,
+  setProfileErrorUpdateAlert,
+  setLoginAlert
 } = slice.actions;
 export const Reducer = slice.reducer;

@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Context, FormikField, Input, setGoogleUser, setToken, setUser, useLoader } from "../../Settings";
+import { Button, Context, FormikField, Input, setGoogleUser, setLoginAlert, setToken, setUser, useLoader } from "../../Settings";
 import { ErrorMessage, Form, Formik } from "formik";
 import * as yup from "yup";
 import { useMutation } from "react-query";
@@ -30,7 +30,9 @@ export const Authentication = () => {
                 dispatch(setGoogleUser(user))
                 dispatch(setToken(accessToken))
             }
-        }).catch(error => console.log(error))
+        }).catch(error => {
+          dispatch(setLoginAlert(true))
+        })
     }catch(error){
         return error
     }

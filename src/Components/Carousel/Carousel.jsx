@@ -2,6 +2,7 @@ import PopularJson from "../JSONS/popular.json";
 import { Slider } from "../slider"
 
 export const Carousel = ({array, title, active}) => {
+    console.log(array)
     return(
         <section className={`carousel popular ${active ? "carousel--active": ""}`}>
             <div className="container">

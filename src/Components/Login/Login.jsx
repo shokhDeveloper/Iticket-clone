@@ -1,10 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
-import { Button, Context, Input, setModalLoginClassName, setModalSign, setToken, setUser, useLoader } from "../../Settings";
+import { Button, Context, Input, setLoginAlert, setModalLoginClassName, setModalSign, setToken, setUser, useLoader } from "../../Settings";
 import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup"
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useMutation } from "react-query";
 import axios from "axios";
 export const Login = () => {
@@ -36,6 +36,8 @@ export const Login = () => {
         }
 
       }
+    }).catch(error => {
+      dispatch(setLoginAlert(true))
     })
   })
   const onSubmit = (event) => {
@@ -50,6 +52,7 @@ export const Login = () => {
   },[errors, watch()])    
   watch()
   return (
+    <>
     <div className="modal_form__box">
       <form className="modal__form" onSubmit={handleSubmit(onSubmit)}>
         {errors?.email && (
@@ -71,10 +74,11 @@ export const Login = () => {
       <div className="modal_form__discription_box">
         <h3>Впервые на iTicket.UZ?</h3>
         <a href="#" onClick={() => {
-          console.log("ishladi")
           setSignType("register")
         }}>Зарегистрироваться сейчас</a>
       </div>
     </div>
+   
+    </>
   );
 };
