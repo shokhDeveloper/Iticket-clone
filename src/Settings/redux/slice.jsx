@@ -17,6 +17,7 @@ const defaultUser = {
   password: null
 }
 const initialState = {
+  siteLink: "https://iticket.uz",
   token: getItem("application-token") ? getItem("application-token") : null,
   user: getItem("application-user")
     ? JSON.parse(getItem("application-user"))
@@ -39,7 +40,8 @@ const initialState = {
   profileDisabled: true,
   profileSuccessUpdateAlert: false,
   profileErrorUpdateAlert: false,
-  loginAlert: false
+  loginAlert: false,
+  modalSend: false
 };
 export const slice = createSlice({
   name: "ITICKET",
@@ -156,6 +158,9 @@ export const slice = createSlice({
     },
     setLoginAlert(state, action){
       state.loginAlert = action.payload
+    },
+    setModalSend(state, action){
+      state.modalSend = action.payload
     }
   },
 });
@@ -182,6 +187,7 @@ export const {
   setProfileDisabled,
   setProfileSuccessUpdateAlert,
   setProfileErrorUpdateAlert,
-  setLoginAlert
+  setLoginAlert,
+  setModalSend
 } = slice.actions;
 export const Reducer = slice.reducer;

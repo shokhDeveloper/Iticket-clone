@@ -48,3 +48,20 @@
 .main__active{
     height: 70vh !important;
 }
+.send__links{
+  width: 100%;
+  padding: 1rem 0rem;
+  @include functions.flex(space-around)
+} 
+.send__links button{
+  background: #fd0;
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 28px;
+}
+.send__links button:nth-child(1){
+  color: crimson;
+}
+.send__links button:nth-child(2){
+  color: rgb(0, 90, 90);
+}

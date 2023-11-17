@@ -2,11 +2,12 @@ import "./mainPage.scss";
 import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes, useParams } from "react-router";
-import { BsSendFill } from "react-icons/bs";
+import { BsInstagram, BsSendFill, BsTelegram } from "react-icons/bs";
 import {
   Button,
   Context,
   setDataPage,
+  setModalSend,
   setModalSign,
   setTovarResultPage,
   useBack,
@@ -29,7 +30,7 @@ import { Kultur } from "../../Components/Kultur";
 import { Popular } from "../../Components/Popular";
 import { AllTovarBackground } from "../../Components/AllTovarbackground";
 export const TovarPage = () => {
-  const { dataPage, authenticationType, modalSign } = useSelector(
+  const { dataPage, authenticationType, modalSign, modalSend, siteLink } = useSelector(
     ({ Reducer }) => Reducer
   );
   const { back, typeBack } = useBack(true);
@@ -89,7 +90,7 @@ export const TovarPage = () => {
                               {result.price}
                             </Button>
                             <Like tovar={result} />
-                            <button className="border-transparent">
+                            <button onClick={() => dispatch(setModalSend(true))} className="border-transparent">
                               <BsSendFill />
                             </button>
                           </>
@@ -105,6 +106,20 @@ export const TovarPage = () => {
       </section>
       <TovarPageInfos/>
       <ShoppingBtn/>
+      {modalSend ? (
+        <Modal modal={modalSend} context={false} links={null}  setModal={setModalSend} title={"Send its konser"}>
+          <div className="send__links">
+            <button onClick={() => {
+              navigator.clipboard.writeText(siteLink)
+            window.open("https://instagram.com")
+            }} className="border-transparent"><BsInstagram/></button>
+            <button onClick={() => {
+              navigator.clipboard.writeText(siteLink)
+              window.open("https://telegram.org", "blank")
+            }} className="border-transparent"><BsTelegram/></button>
+          </div>
+      </Modal>
+        ): null}
       <Footer/>
       {modalSign && (
         <Modal

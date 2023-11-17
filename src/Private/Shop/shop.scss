@@ -1,0 +1,17 @@
+.shop__title_box{
+    width: 100%;
+    text-align: center;
+}
+.shop__title_box h2{
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;   
+}
+.shop__inner{
+    display: grid;
+    grid-template: repeat(1, auto) / repeat(3, 30%);
+    grid-gap: 20px;
+}
+.shop__inner .slide{
+    position: relative;
+}

@@ -62,7 +62,7 @@ export const SlideBtn = styled.button.attrs({
   type: "button",
 })`
   padding: 0.8rem 1rem;
-  background: #fd0;
+  background: ${({styledType}) => styledType === "danger" ? "crimson": "#fd0"};
   color: #000;
   font-weight: 600;
   font-size: 20px;

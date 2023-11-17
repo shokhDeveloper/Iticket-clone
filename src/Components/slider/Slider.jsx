@@ -43,11 +43,10 @@ export const Slider = (props) => {
     }
   };
   const handleClickSlider = (event, item) => {
-    if (!event.target.matches(".shop-btn")) {
+    if (!event.target.matches(".slide__btn")) {
         openLoader();
         navigate(`/tovar/${item.id}`);
         setMainActive(true);
-      
     } else {
         if (token) {
             addItem(item);

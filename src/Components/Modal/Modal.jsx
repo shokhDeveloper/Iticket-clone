@@ -7,7 +7,7 @@ import { auth, googleAuthProvider } from "../../Settings/firebase/firebase.confi
 import { Context, setAuthenticationType, setGoogleUser } from "../../Settings";
 import { useContext, useEffect } from "react";
 
-export const Modal = ({ title, setModal, links, children, context, modal }) => {
+export const Modal = ({ title, setModal, links, children, context,}) => {
   const {modalLoginClassName, googleFirebaseUser, authenticationType} = useSelector(({Reducer}) => Reducer)
   const {signType} = useContext(Context)
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ export const Modal = ({ title, setModal, links, children, context, modal }) => {
     },[googleFirebaseUser])
   return (
     <div className="modal__overlay overlay">
-      <div className="modal">
+      <div className="modal" >
         <div className={`modal__body ${`modal_`.concat(path).concat(path === "login" && modalLoginClassName ? "--active": "")} `} style={{height: path !== "login" && authenticationType === "register" ? "auto": "" }}>
           <div className="modal__header">
             <div className="modal_header__title_box">
